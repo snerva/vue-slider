@@ -77,6 +77,9 @@ createApp ({
         },
         stopAutoplay(){
             clearInterval(this.intervalId)
+        },
+        changeThumb(i){
+            this.activeSlide = i
         }
        
     },
