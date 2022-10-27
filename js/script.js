@@ -30,6 +30,7 @@ createApp ({
     data() {
         return{
             activeSlide: 0,
+            intervalId: null,
             slides: [
                 {
                     image: 'img/01.webp',
@@ -68,9 +69,18 @@ createApp ({
             if(this.activeSlide === this.slides.length){
                 this.activeSlide = 0
             }
-        } 
+        },
+        startAutoplay(){
+            this.intervalId = setInterval(() => {
+                this.nextImage()
+            }, 3000)
+        },
+        stopAutoplay(){
+            clearInterval(this.intervalId)
+        }
+       
     },
     mounted(){
-
+      this.startAutoplay()
     }
 }).mount('#app')
