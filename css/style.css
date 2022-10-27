@@ -32,6 +32,13 @@
     color: white;
 }
 
+.slider-wrapper .item:not(.item.active){
+    display: none;
+}
+
+.slider-wrapper .item.active{
+    display: block;
+}
 .thumbs {
     float: left;
     height: 300px;
